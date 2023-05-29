@@ -1,0 +1,19 @@
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+  <label for="name">Nome: </label>
+  <input type="text" [(ngModel)]="lanche.name" name="name" required>
+
+  <label for="ingredientes">ingredientes: </label>
+  <input type="text" [(ngModel)]="lanche.ingredientes" name="ingredientes" required>
+
+  <label for="preco">Preço: </label>
+  <input type="number" [(ngModel)]="lanche.preco" name="preco" required>
+
+  <label for="estoque">Estoque: </label>
+  <input type="number" [(ngModel)]="lanche.estoque" name="estoque" required>
+
+  <input type="submit" [disabled]="myForm.invalid">
+</form>
+
+<div *ngIf="createdLanche">
+  Herói {{createdLanche.name}} criado com sucesso!
+</div>

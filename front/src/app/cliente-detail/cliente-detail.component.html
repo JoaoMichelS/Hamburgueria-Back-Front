@@ -1,0 +1,23 @@
+<div *ngIf="cliente">
+
+  <h2>{{cliente.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{cliente._id}}</div>
+  <div>
+    <label for="cliente-name">Nome cliente: </label>
+    <input id="cliente-name" [(ngModel)]="cliente.name" placeholder="name">
+  </div>
+
+  <div *ngIf="updated">
+    Herói atualizado com sucesso!
+  </div>
+
+  <div>
+    <button (click)="updateCliente()">Salvar</button>
+    <button type="button" (click)="goBack()">Voltar</button>
+  </div>
+
+</div>
+
+<div *ngIf="notFound">
+  {{notFoundMessage}}
+</div>

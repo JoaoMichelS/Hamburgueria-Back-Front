@@ -1,0 +1,15 @@
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+  <label for="name">Nome: </label>
+  <input type="text" [(ngModel)]="cliente.name" name="name" required>
+
+  <label for="ingredientes">Id lanche: </label>
+  <input type="text" [(ngModel)]="cliente.hamb_id" name="ingredientes" required>
+
+
+  <input type="submit" [disabled]="myForm.invalid">
+</form>
+
+<div *ngIf="createdCliente">
+  Herói {{createdCliente.name}} criado com sucesso!
+</div>
+
